@@ -1,0 +1,28 @@
+<div class="panel panel-primary">
+<% @recipes.each do |food| %>
+<%= food_type %>
+<div class="panel-heading text-center"><%= food.content %></div>
+<table class = "table">
+	<tr>
+		<td>
+			<div class="text-center list-group-item-info">Upstairs Freezer</div>
+			<div class="text-center panel-body"> <%= food.quantity_upstairs %>
+				<div class="pull-right btn-group btn-group-xs" role="group">
+					<button type="button" class="glyphicon glyphicon-arrow-up"></button>
+					<button type="button" class="glyphicon glyphicon-arrow-down"></button>
+				</div>
+			</div>
+		</td>
+		<td>
+			<div class="text-center list-group-item-info">Downstairs Freezer</div>
+			<div class="text-center panel-body"> <%= food.quantity_downstairs %>
+				<div class="pull-right btn-group btn-group-xs" role="group">
+					<button type="button" class="glyphicon glyphicon-arrow-up"></button>
+					<button type="button" class="glyphicon glyphicon-arrow-down"></button>
+				</div>
+			</div>
+		</td>
+</tr>
+</table>
+<% end %>
+</div>

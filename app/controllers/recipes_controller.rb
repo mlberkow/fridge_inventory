@@ -5,6 +5,13 @@ class RecipesController < ApplicationController
   # GET /recipes.json
   def index
     @recipes = Recipe.all
+    @food_types = food_types
+    @plain_protein = Recipe.all.where(food_type: 'Plain Protein')
+    @starch = Recipe.all.where(food_type: 'Starch')
+    @Sauces = Recipe.all.where(food_type: 'Sauces')
+    @beef = Recipe.all.where(food_type: 'Beef')
+    @chicken = Recipe.all.where(food_type: 'Chicken')
+    @turkey = Recipe.all.where(food_type: 'Turkey')
   end
 
   # GET /recipes/1
@@ -59,6 +66,10 @@ class RecipesController < ApplicationController
       format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def food_types
+     @recipes.map { |f| f.food_type}.uniq.sort
   end
 
   private
