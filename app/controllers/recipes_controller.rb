@@ -5,13 +5,13 @@ class RecipesController < ApplicationController
   # GET /recipes.json
   def index
     @recipes = Recipe.all
-    @food_types = food_types
-    @plain_protein = Recipe.all.where(food_type: 'Plain Protein')
-    @starch = Recipe.all.where(food_type: 'Starch')
-    @Sauces = Recipe.all.where(food_type: 'Sauces')
-    @beef = Recipe.all.where(food_type: 'Beef')
-    @chicken = Recipe.all.where(food_type: 'Chicken')
-    @turkey = Recipe.all.where(food_type: 'Turkey')
+    # @food_types = food_types
+    # @plain_protein = Recipe.all.where(food_type: 'Plain Protein')
+    # @starch = Recipe.all.where(food_type: 'Starch')
+    # @Sauces = Recipe.all.where(food_type: 'Sauces')
+    # @beef = Recipe.all.where(food_type: 'Beef')
+    # @chicken = Recipe.all.where(food_type: 'Chicken')
+    # @turkey = Recipe.all.where(food_type: 'Turkey')
   end
 
   # GET /recipes/1
@@ -71,6 +71,7 @@ class RecipesController < ApplicationController
   def food_types
      @recipes.map { |f| f.food_type}.uniq.sort
   end
+  helper_method :food_types
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -82,4 +83,5 @@ class RecipesController < ApplicationController
     def recipe_params
       params.require(:recipe).permit(:content, :quantity_upstairs, :quantity_downstairs, :food_type, :ann_safe, :checkbox_value)
     end
+
 end
