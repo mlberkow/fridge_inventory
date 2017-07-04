@@ -1,3 +1,5 @@
+require 'pry'
+
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
@@ -5,13 +7,6 @@ class RecipesController < ApplicationController
   # GET /recipes.json
   def index
     @recipes = Recipe.all
-    # @food_types = food_types
-    # @plain_protein = Recipe.all.where(food_type: 'Plain Protein')
-    # @starch = Recipe.all.where(food_type: 'Starch')
-    # @Sauces = Recipe.all.where(food_type: 'Sauces')
-    # @beef = Recipe.all.where(food_type: 'Beef')
-    # @chicken = Recipe.all.where(food_type: 'Chicken')
-    # @turkey = Recipe.all.where(food_type: 'Turkey')
   end
 
   # GET /recipes/1
@@ -73,6 +68,13 @@ class RecipesController < ApplicationController
   end
   helper_method :food_types
 
+  def increase_upstairs
+    binding.pry
+  set_recipe
+
+  Recipe.first.increment! :quantity_upstairs
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_recipe
@@ -81,7 +83,7 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:content, :quantity_upstairs, :quantity_downstairs, :food_type, :ann_safe, :checkbox_value)
+      params.require(:recipe).permit(:content, :quantity_upstairs, :quantity_downstairs, :food_type, :ann_safe, :checkbox_value, :id)
     end
 
 end

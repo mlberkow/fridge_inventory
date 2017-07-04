@@ -1,5 +1,6 @@
 <div class="panel panel-primary">
 	<% Recipe.all.where(food_type: recipe).each do |a| %>
+	<%= a.id %>
 <div class="panel-heading text-center"><%= a.content %></div>
 <table class = "table">
 	<tr>
@@ -7,6 +8,8 @@
 			<div class="text-center list-group-item-info">Upstairs Freezer</div>
 			<div class="text-center panel-body"> <%= a.quantity_upstairs %>
 				<div class="pull-right btn-group btn-group-xs" role="group">
+					<%= link_to 'like', recipe_increase_upstairs_path(Recipe), method: :put %>
+
 					<button type="button" class="glyphicon glyphicon-arrow-up"></button>
 					<button type="button" class="glyphicon glyphicon-arrow-down"></button>
 				</div>
