@@ -6,7 +6,12 @@ Rails.application.routes.draw do
 	get 'add_recipe' => 'pages#add_recipe'
 
 	resources :recipes do
-   		put :increase_upstairs
+		member do
+   			put :increase_upstairs
+   			put :decrease_upstairs
+   			put :increase_downstairs
+   			put :decrease_downstairs
+   		end
 	end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

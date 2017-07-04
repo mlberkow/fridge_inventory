@@ -8,10 +8,10 @@
 			<div class="text-center list-group-item-info">Upstairs Freezer</div>
 			<div class="text-center panel-body"> <%= a.quantity_upstairs %>
 				<div class="pull-right btn-group btn-group-xs" role="group">
-					<%= link_to 'like', recipe_increase_upstairs_path(Recipe), method: :put %>
 
-					<button type="button" class="glyphicon glyphicon-arrow-up"></button>
-					<button type="button" class="glyphicon glyphicon-arrow-down"></button>
+					<%= link_to "<i class ='glyphicon glyphicon-arrow-up'></i>".html_safe, increase_upstairs_recipe_path(a), method: :put %>
+					<%= link_to "<i class ='glyphicon glyphicon-arrow-down'></i>".html_safe, decrease_upstairs_recipe_path(a), method: :put %>
+
 				</div>
 			</div>
 		</td>
@@ -19,8 +19,8 @@
 			<div class="text-center list-group-item-info">Downstairs Freezer</div>
 			<div class="text-center panel-body"> <%= a.quantity_downstairs %>
 				<div class="pull-right btn-group btn-group-xs" role="group">
-					<button type="button" class="glyphicon glyphicon-arrow-up"></button>
-					<button type="button" class="glyphicon glyphicon-arrow-down"></button>
+					<%= link_to "<i class ='glyphicon glyphicon-arrow-up'></i>".html_safe, increase_downstairs_recipe_path(a), method: :put %>
+					<%= link_to "<i class ='glyphicon glyphicon-arrow-down'></i>".html_safe, decrease_downstairs_recipe_path(a), method: :put %>
 				</div>
 			</div>
 		</td>

@@ -69,10 +69,39 @@ class RecipesController < ApplicationController
   helper_method :food_types
 
   def increase_upstairs
-    binding.pry
-  set_recipe
+    set_recipe
+    @recipe.increment! :quantity_upstairs
 
-  Recipe.first.increment! :quantity_upstairs
+    respond_to do |format|
+      format.html { redirect_to recipes_path}
+    end
+  end
+
+  def decrease_upstairs
+    set_recipe
+    @recipe.decrement! :quantity_upstairs
+
+    respond_to do |format|
+      format.html { redirect_to recipes_path}
+    end
+  end
+
+  def increase_downstairs
+    set_recipe
+    @recipe.increment! :quantity_downstairs
+
+    respond_to do |format|
+      format.html { redirect_to recipes_path}
+    end
+  end
+
+  def decrease_downstairs
+    set_recipe
+    @recipe.decrement! :quantity_downstairs
+
+    respond_to do |format|
+      format.html { redirect_to recipes_path}
+    end
   end
 
   private
