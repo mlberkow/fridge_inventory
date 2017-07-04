@@ -7,12 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 plain_proteins = [
-	'Chicken (cooked, bags)', 'Chicken (uncooked)', 'Chicken Broth', 'Buffalo', 'Buffalo Broth',
-		'Grnd Beef (uncooked)', 'Turkey (uncooked, bags)', 'Turkey Broth', 'Tilapia (Bags),', 'Other Fish'
+	'Chicken (cooked, bags)', 'Chicken Broth', 'Buffalo Broth', 'Turkey (cooked, bags)', 'Turkey Broth'
 	]
 
 starches = [
-	'Bulgar', 'Kasha', 'Quinoa', 'White Rice', 'Wild Rice'
+	'Quinoa', 'White Rice', 'Wild Rice'
 	]
 
 sauces = [
@@ -25,7 +24,7 @@ beef = [
 
 chicken = [
 	'Indian 1', 'Indian 2', 'Almond', 'BBQ', 'Bourbon', 'Cacciatore', '5 Spice', 'Ginger', 'Hawaiian', 'Honey Sesame',
-	'Lemon/Mustard', 'Moroccan', 'Orange Cashew', 'Parmesan', 'Shwarma', 'Soup', 'Tagine', 'Thai Peanut'
+	'Lemon/Mustard', 'Moroccan', 'Orange Cashew', 'Shwarma', 'Soup', 'Tagine', 'Thai Peanut'
 	]
 
 turkey = [

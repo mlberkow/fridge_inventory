@@ -1,6 +1,5 @@
-  <% Recipe.all.where(food_type: recipe).each do |a| %>
-
 <div class="panel panel-primary">
+	<% Recipe.all.where(food_type: recipe).each do |a| %>
     <div class="panel-heading text-center"><%= a.content %></div>
       <table class = "table">
         <tr>
@@ -25,5 +24,5 @@
           </td>
         </tr>
       </table>
-</div>
   <% end %>
+</div>
