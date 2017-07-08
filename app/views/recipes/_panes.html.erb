@@ -1,6 +1,8 @@
 <div class="panel panel-primary">
 	<% Recipe.all.where(food_type: recipe).each do |a| %>
-    <div class="panel-heading text-center"><%= a.content %></div>
+    <div class="panel-heading text-center"><%= a.content %>
+      <%= link_to "<i class ='glyphicon glyphicon-trash' style='color:white'></i>".html_safe, recipe_path(a), method: :delete, :class => "pull-right" %>
+    </div>
       <table class = "table table-responsive">
         <tr>
 		      <td>
@@ -9,7 +11,6 @@
               <div class="pull-right btn-group btn-group-xs" role="group">
                 <%= link_to "<i class ='glyphicon glyphicon-arrow-up'></i>".html_safe, increase_upstairs_recipe_path(a), method: :put %>
                 <%= link_to "<i class ='glyphicon glyphicon-arrow-down'></i>".html_safe, decrease_upstairs_recipe_path(a), method: :put %>
-
 				      </div>
             </div>
 		      </td>
