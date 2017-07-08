@@ -1,7 +1,7 @@
 <div class="panel panel-primary">
 	<% Recipe.all.where(food_type: recipe).each do |a| %>
     <div class="panel-heading text-center"><%= a.content %></div>
-      <table class = "table">
+      <table class = "table table-responsive">
         <tr>
 		      <td>
             <div class="text-center list-group-item-info">Upstairs Freezer</div>

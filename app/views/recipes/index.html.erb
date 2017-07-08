@@ -1,52 +1,9 @@
-<div class="row">
-  <% food_types.each do | recipe | %>
-    <div class="col-md-6">
-      <h3 class="text-center"><%=recipe%></h3>
-        <%= render partial: 'panes', locals: {:recipe => recipe} %>
-    </div>
-  <% end %>
-</div>
+  <div class="row">
+    <% food_types.each do | recipe | %>
+      <div class="col-md-6 center-block">
+        <h3 class="text-center"><%=recipe%></h3>
+          <%= render partial: 'panes', locals: {:recipe => recipe} %>
+      </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-<p id="notice"><%= notice %></p>
-
-<h1>Recipes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @recipes.each do |recipe| %>
-      <tr>
-        <td><%= recipe.content %> </td>
-        <td> <%= recipe.quantity_upstairs%></td>
-        <td> <%= recipe.quantity_downstairs%> </td>
-        <td> <%= recipe.food_type %> </td>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Recipe', new_recipe_path %> -->
+  </div>

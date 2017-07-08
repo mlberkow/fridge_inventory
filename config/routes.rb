@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :recipes
-	get 'pages/home'
-	root 'pages#home'
+	get 'pages/recipes/index'
+	root 'recipes#index'
 
 	get 'add_recipe' => 'pages#add_recipe'
 

@@ -44,7 +44,7 @@ sauces.each do |content|
 end
 
 beef.each do |content|
-	Recipe.create(content: content, food_type: 'Beef')
+	Recipe.create(content: content, food_type: 'Red Meat')
 end
 
 chicken.each do |content|
