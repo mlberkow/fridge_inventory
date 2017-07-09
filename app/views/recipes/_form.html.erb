@@ -12,56 +12,29 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content, id: :recipe_content %>
+  <div class="input input-primary input-md">
+    <%= form.text_area :content, id: :recipe_content, placeholder: 'Meal', class: 'form-control'%>
+    <%= form.text_area :quantity_upstairs, id: :recipe_quantity_upstairs, placeholder: 'Quantity Upstairs', class: 'form-control'%>
+    <%= form.text_area :quantity_downstairs, id: :recipe_quantity_downstairs, placeholder: 'Quantity Downstairs', class: 'form-control'%>
   </div>
 
-  <div class="field">
-    <%= form.label :quantity_upstairs %>
-    <%= form.text_area :quantity_upstairs, id: :recipe_quantity_upstairs %>
-  </div>
 
-  <div class="field">
-    <%= form.label :quantity_downstairs %>
-    <%= form.text_area :quantity_downstairs, id: :recipe_quantity_downstairs %>
-  </div>
-
-  <div class = "field">
-  <%= form.select :food_type, ['Plain Protein','Starch', 'Sauces', 'Red Meat', 'Chicken', 'Turkey'], :prompt => 'Select A Food Type' %>
-</div>
+<%= form.select :food_type, options_for_select([
+  ["Select One", ""], 
+  "Chicken", 
+  "Plain Protein", 
+  "Red Meat", 
+  "Sauces", 
+  "Starch",
+  "Turkey"]), 
+  {}, { class: "form form-group form-control" } %>
 
 <div class="field">
-    <%= form.label "Ann Safe" %> <br />
-    <%= form.check_box :ann_safe %> <br />
+    <%= form.label "Ann Safe" %>
+    <%= form.check_box :ann_safe, {checked: true} %> <br />
 </div>
-
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary"%>
   </div>
 <% end %>
-
-
-<div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">@</span>
-  <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-</div>
-
-<div class="input-group">
-  <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
-  <span class="input-group-addon" id="basic-addon2">@example.com</span>
-</div>
-
-<div class="input-group">
-  <span class="input-group-addon">$</span>
-  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-  <span class="input-group-addon">.00</span>
-</div>
-
-<label for="basic-url">Your vanity URL</label>
-<div class="input-group">
-  <span class="input-group-addon" id="basic-addon3">https://example.com/users/</span>
-  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-</div>
-</div>
