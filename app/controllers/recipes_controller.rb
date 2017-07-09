@@ -79,10 +79,12 @@ class RecipesController < ApplicationController
 
   def decrease_upstairs
     set_recipe
-    @recipe.decrement! :quantity_upstairs
+    if @recipe.quantity_upstairs > 0
+      @recipe.decrement! :quantity_upstairs
 
-    respond_to do |format|
-      format.html { redirect_to recipes_path}
+      respond_to do |format|
+        format.html { redirect_to recipes_path}
+      end
     end
   end
 
@@ -97,10 +99,12 @@ class RecipesController < ApplicationController
 
   def decrease_downstairs
     set_recipe
-    @recipe.decrement! :quantity_downstairs
+    if @recipe.quantity_downstairs > 0
+      @recipe.decrement! :quantity_downstairs
 
-    respond_to do |format|
-      format.html { redirect_to recipes_path}
+      respond_to do |format|
+        format.html { redirect_to recipes_path}
+      end
     end
   end
 
