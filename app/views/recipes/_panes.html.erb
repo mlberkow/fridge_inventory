@@ -6,7 +6,9 @@
       <table class = "table table-responsive">
         <tr>
 		      <td>
-            <div class="text-center list-group-item-info">Upstairs Freezer</div>
+            <!-- <div class="text-center">  -->
+              <div class="text-center <%= a.quantity_upstairs == 0 ? :'list-group-item-danger' : :'list-group-item-info' %>"> Upstairs Freezer</div>
+
             <div class="text-center panel-body"> <%= a.quantity_upstairs %>
               <div class="pull-right btn-group btn-group-xs" role="group">
                 <%= link_to "<i class ='glyphicon glyphicon-arrow-up'></i>".html_safe, increase_upstairs_recipe_path(a), method: :put %>
@@ -15,12 +17,12 @@
             </div>
 		      </td>
 		    <td>
-            <div class="text-center list-group-item-info">Downstairs Freezer</div>
+              <div class="text-center <%= a.quantity_upstairs == 0 ? :'list-group-item-danger' : :'list-group-item-info' %>"> Downstairs Freezer</div>
             <div class="text-center panel-body"> <%= a.quantity_downstairs %>
               <div class="pull-right btn-group btn-group-xs" role="group">
                 <%= link_to "<i class ='glyphicon glyphicon-arrow-up'></i>".html_safe, increase_downstairs_recipe_path(a), method: :put %>
                 <%= link_to "<i class ='glyphicon glyphicon-arrow-down'></i>".html_safe, decrease_downstairs_recipe_path(a), method: :put %>
-			</div>
+			         </div>
             </div>
           </td>
         </tr>
