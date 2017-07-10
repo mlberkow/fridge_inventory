@@ -13,12 +13,15 @@
   <% end %>
 
   <div class="input input-primary input-md">
-    <%= form.text_area :content, id: :recipe_content, placeholder: 'Meal', class: 'form-control'%>
-    <%= form.text_area :quantity_upstairs, id: :recipe_quantity_upstairs, placeholder: 'Quantity Upstairs', class: 'form-control'%>
-    <%= form.text_area :quantity_downstairs, id: :recipe_quantity_downstairs, placeholder: 'Quantity Downstairs', class: 'form-control'%>
+    <label for='meal'>Meal</label>
+    <%= form.text_area :content, id: :recipe_content, placeholder: 'Meal', class: 'form-control', id: 'meal'%>
+    <label for='upstairs'>Quantity Upstairs</label>
+    <%= form.text_area :quantity_upstairs, id: :recipe_quantity_upstairs, placeholder: 'Quantity Upstairs', class: 'form-control', id: 'upstairs'%>
+    <label for='downstairs'>Quantity Downstairs</label>
+    <%= form.text_area :quantity_downstairs, id: :recipe_quantity_downstairs, placeholder: 'Quantity Downstairs', class: 'form-control', id: 'downstairs'%>
   </div>
 
-
+<label>Food Type</label>
 <%= form.select :food_type, options_for_select([
   ["Select One", ""], 
   "Chicken", 
