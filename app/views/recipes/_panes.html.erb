@@ -1,7 +1,5 @@
 <div class="panel panel-primary">
-  <% unsorted = Recipe.all.where(food_type: recipe).map { |ft| ft } %>
-  <% sorted = unsorted.sort_by { |b| b.content } %>
-  <% sorted.each do |a| %>
+  <% Recipe.all.where(food_type: recipe).order(:content).each do |a| %>
     <div class="panel-heading text-center"><%= a.content %>
       <%= link_to "<i class ='glyphicon glyphicon-edit' style='color:white'></i>".html_safe, edit_recipe_path(a), :class => "pull-right" %>
       <%= link_to "<i class ='glyphicon glyphicon-trash' style='color:white'></i>".html_safe, recipe_path(a), method: :delete, :class => "pull-right" %>
