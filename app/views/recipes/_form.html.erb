@@ -23,13 +23,13 @@
 
 <label>Food Type</label>
 <%= form.select :food_type, options_for_select([
-  ["Select One", ""], 
-  "Chicken", 
-  "Plain Protein", 
-  "Red Meat", 
-  "Sauces", 
+  ["Select One", ""],
+  "Chicken",
+  "Plain Protein",
+  "Red Meat",
+  "Sauces",
   "Starch",
-  "Turkey"]), 
+  "Turkey"], @recipe.food_type),
   {}, { class: "form form-group form-control" } %>
 
 <div class="field">

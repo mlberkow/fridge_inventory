@@ -83,7 +83,7 @@ class RecipesController < ApplicationController
       @recipe.decrement! :quantity_upstairs
 
       respond_to do |format|
-        format.html { redirect_to recipes_path}
+        format.js {render inline: "location.reload();" }
       end
     end
   end
