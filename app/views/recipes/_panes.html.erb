@@ -1,8 +1,8 @@
 <div class="panel panel-primary">
   <% Recipe.all.where(food_type: recipe).order(:content).each do |a| %>
     <div class="panel-heading text-center" id= "<%= a.id %>" ><%= a.content %>
-      <%= link_to "<i class ='glyphicon glyphicon-edit' style='color:white'></i>".html_safe, edit_recipe_path(a), :class => "pull-right" %>
-      <%= link_to "<i class ='glyphicon glyphicon-trash' style='color:white'></i>".html_safe, recipe_path(a), method: :delete, :class => "pull-right" %>
+      <%= link_to "<i class ='glyphicon glyphicon-edit glyphicon-white-spaced'></i>".html_safe, edit_recipe_path(a), :class => "pull-right" %>
+      <%= link_to "<i class ='glyphicon glyphicon-trash glyphicon-white-spaced'></i>".html_safe, recipe_path(a), method: :delete, :class => "pull-right" %>
     </div>
       <table class = "table table-responsive">
         <tr>
@@ -12,8 +12,8 @@
 
             <div class="text-center panel-body"> <%= a.quantity_upstairs %>
               <div class="pull-right btn-group btn-group-xs" role="group">
-                <%= link_to "<i class ='glyphicon glyphicon-arrow-up'></i>".html_safe, increase_upstairs_recipe_path(a), method: :put %>
-                <%= link_to "<i class ='glyphicon glyphicon-arrow-down'></i>".html_safe, decrease_upstairs_recipe_path(a), method: :put %>
+                <%= link_to "<i class ='glyphicon glyphicon-arrow-up glyphicon-margin'></i>".html_safe, increase_upstairs_recipe_path(a), method: :put %>
+                <%= link_to "<i class ='glyphicon glyphicon-arrow-down glyphicon-margin'></i>".html_safe, decrease_upstairs_recipe_path(a), method: :put %>
 				      </div>
             </div>
 		      </td>
@@ -21,8 +21,8 @@
               <div class="text-center <%= a.quantity_downstairs == 0 ? :'list-group-item-danger' : :'list-group-item-info' %>"> Downstairs Freezer</div>
             <div class="text-center panel-body"> <%= a.quantity_downstairs %>
               <div class="pull-right btn-group btn-group-xs" role="group">
-                <%= link_to "<i class ='glyphicon glyphicon-arrow-up'></i>".html_safe, increase_downstairs_recipe_path(a), method: :put %>
-                <%= link_to "<i class ='glyphicon glyphicon-arrow-down'></i>".html_safe, decrease_downstairs_recipe_path(a), method: :put %>
+                <%= link_to "<i class ='glyphicon glyphicon-arrow-up glyphicon-margin'></i>".html_safe, increase_downstairs_recipe_path(a), method: :put %>
+                <%= link_to "<i class ='glyphicon glyphicon-arrow-down glyphicon-margin'></i>".html_safe, decrease_downstairs_recipe_path(a), method: :put %>
 			         </div>
             </div>
           </td>
