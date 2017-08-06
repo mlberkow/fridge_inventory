@@ -73,7 +73,7 @@ class RecipesController < ApplicationController
     @recipe.increment! :quantity_upstairs
 
     respond_to do |format|
-      format.html { redirect_to recipes_path}
+      format.html { redirect_to recipes_path(anchor: @recipe.id)}
     end
   end
 
@@ -83,7 +83,7 @@ class RecipesController < ApplicationController
       @recipe.decrement! :quantity_upstairs
 
       respond_to do |format|
-        format.js {render inline: "location.reload();" }
+        format.html { redirect_to recipes_path(anchor: @recipe.id) }
       end
     end
   end
@@ -93,7 +93,7 @@ class RecipesController < ApplicationController
     @recipe.increment! :quantity_downstairs
 
     respond_to do |format|
-      format.html { redirect_to recipes_path}
+      format.html { redirect_to recipes_path(anchor: @recipe.id) }
     end
   end
 
@@ -103,7 +103,7 @@ class RecipesController < ApplicationController
       @recipe.decrement! :quantity_downstairs
 
       respond_to do |format|
-        format.html { redirect_to recipes_path}
+        format.html { redirect_to recipes_path(anchor: @recipe.id) }
       end
     end
   end

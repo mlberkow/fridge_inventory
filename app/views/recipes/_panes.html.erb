@@ -1,6 +1,6 @@
 <div class="panel panel-primary">
   <% Recipe.all.where(food_type: recipe).order(:content).each do |a| %>
-    <div class="panel-heading text-center"><%= a.content %>
+    <div class="panel-heading text-center" id= "<%= a.id %>" ><%= a.content %>
       <%= link_to "<i class ='glyphicon glyphicon-edit' style='color:white'></i>".html_safe, edit_recipe_path(a), :class => "pull-right" %>
       <%= link_to "<i class ='glyphicon glyphicon-trash' style='color:white'></i>".html_safe, recipe_path(a), method: :delete, :class => "pull-right" %>
     </div>
