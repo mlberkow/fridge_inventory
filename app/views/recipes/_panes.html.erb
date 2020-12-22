@@ -1,6 +1,6 @@
 <% Recipe.all.where(food_type: recipe).order(:content).each do |a| %>
 
-  <div class="panel <%=a.ann_safe == false ? :'panel-danger' : :'panel-primary' %>">
+  <div class="panel <%=a.ann_safe == false ? :'panel-warning' : :'panel-success' %>">
     <div class="panel-heading text-center" id="<%= a.id %>">
       <%= a.content %>
         <%= link_to "<i class ='glyphicon glyphicon-edit glyphicon-white-spaced'></i>" .html_safe, edit_recipe_path(a),
@@ -13,7 +13,7 @@
         <td>
           <!-- <div class="text-center">  -->
           <div
-            class="text-center <%= a.quantity_upstairs == 0 ? :'list-group-item-danger' : :'list-group-item-info' %>">
+            class="text-center <%= a.quantity_upstairs == 0 ? :'list-group-item-danger' : :'list-group-item-success' %>">
             Upstairs Freezer</div>
 
           <div class="text-center panel-body">
@@ -28,7 +28,7 @@
         </td>
         <td>
           <div
-            class="text-center <%= a.quantity_downstairs == 0 ? :'list-group-item-danger' : :'list-group-item-info' %>">
+            class="text-center <%= a.quantity_downstairs == 0 ? :'list-group-item-danger' : :'list-group-item-success' %>">
             Downstairs Freezer</div>
           <div class="text-center panel-body">
             <%= a.quantity_downstairs %>
