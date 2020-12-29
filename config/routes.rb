@@ -10,8 +10,14 @@ Rails.application.routes.draw do
    			put :increase_upstairs
    			put :decrease_upstairs
    			put :increase_downstairs
-   			put :decrease_downstairs
+			put :decrease_downstairs
    		end
+	end
+
+	resources :recipes do
+		collection do
+			post :remove_all_counts
+		end
 	end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

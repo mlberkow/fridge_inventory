@@ -1,7 +1,7 @@
 require 'pry'
 
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy, :remove_counts]
 
   # GET /recipes
   # GET /recipes.json
@@ -60,6 +60,16 @@ class RecipesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def remove_all_counts
+    sql = ActiveRecord::Base.connection();
+    sql.begin_db_transaction
+    sql.execute("update recipes set quantity_upstairs = 0, quantity_downstairs = 0")
+    sql.commit_db_transaction
+    respond_to do |format|
+      format.html { redirect_to recipes_url, notice: 'Removed all counts.' }
     end
   end
 
