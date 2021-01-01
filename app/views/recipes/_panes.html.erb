@@ -1,6 +1,7 @@
 <% Recipe.all.where(food_type: recipe).order(:content).each do |a| %>
 
-  <div class="panel <%=a.ann_safe == false ? :'panel-ann-unsafe' : :'panel-success' %>">
+<div class="panel <%=pane_color(a) %>">
+  <!-- <div class="panel <%=a.ann_safe == false ? :'panel-ann-unsafe' : :'panel-success' %>"> -->
     <div class="panel-heading text-center" id="<%= a.id %>">
       <%= a.content %>
         <%= link_to "<i class ='glyphicon glyphicon-edit glyphicon-black-spaced'></i>" .html_safe, edit_recipe_path(a),

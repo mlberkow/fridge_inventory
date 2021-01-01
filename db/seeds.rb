@@ -7,7 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 plain_proteins = [
-	'Chicken (cooked, bags)', 'Chicken Broth', 'Buffalo Broth', 'Turkey (cooked, bags)', 'Turkey Broth'
+	'Chicken (cooked, bags)', 'Chicken Broth', 'Buffalo Broth', 'Turkey (cooked, bags)', 'Turkey Broth', 'Beef Soup Bone', 
+	'Elk Ground', 'Turkey Broth'
 	]
 
 starches = [
@@ -19,32 +20,40 @@ sauces = [
 	]
 
 beef = [
-	'Beer Braised Beef', 'Beef Barley Soup', 'Meat Pies', 'BB Bison Chuck Roast'
+	'Beer Braised Beef', 'Beef Barley Soup', 'Meat Pies', 'BB Bison Chuck Roast', 'Beef Stew'
 	]
 
 chicken = [
 	'Indian 1', 'Indian 2', 'Almond', 'BBQ', 'Bourbon', 'Cacciatore', '5 Spice', 'Ginger', 'Hawaiian', 'Honey Sesame',
-	'Lemon/Mustard', 'Moroccan', 'Orange Cashew', 'Shwarma', 'Soup', 'Tagine', 'Thai Peanut'
+	'Lemon/Mustard', 'Moroccan', 'Orange Cashew', 'Shwarma', 'Soup', 'Tagine', 'Thai Peanut', 'Chicken Stew', 'Indian 3', 
+	'Lemon Chicken', 'Paprika', 'Parmesan', 'Pistachio Crusted Chicken', 
 	]
 
 turkey = [
-	'Apple', 'Balsamic', 'Guinness', 'Maple Walnut', 'Maple Mustard', 'Mustard Lime'
+	'Apple', 'Apple Cider Turkey', 'Apple Turkey 2', 'Balsamic', 'Guinness', 'Maple Walnut', 'Maple Mustard', 
+	'Mustard Lime', 'Sweet & Savory', 'Kebab'
 	]
 
 plain_proteins.each do |content|
-	Recipe.create(content: content, food_type: 'Plain Protein', quantity_upstairs: 0, quantity_downstairs: 0)
+	Recipe.create(content: content, food_type: 'Plain Protein', quantity_upstairs: 0, quantity_downstairs: 0, ann_safe: 't')
 end
 
 starches.each do |content|
-	Recipe.create(content: content, food_type: 'Starch', quantity_upstairs: 0, quantity_downstairs: 0)
+	Recipe.create(content: content, food_type: 'Starch', quantity_upstairs: 0, quantity_downstairs: 0, ann_safe: 't')
 end
 
 sauces.each do |content|
-	Recipe.create(content: content, food_type: 'Sauces', quantity_upstairs: 0, quantity_downstairs: 0)
+	if content == 'Pasta Sauce (Meat)'
+		Recipe.create(content: content, food_type: 'Sauces', quantity_upstairs: 0, quantity_downstairs: 0, ann_safe: 'f')
+
+	else
+		Recipe.create(content: content, food_type: 'Sauces', quantity_upstairs: 0, quantity_downstairs: 0, ann_safe: 't')
+	end
+	
 end
 
 beef.each do |content|
-	Recipe.create(content: content, food_type: 'Red Meat', quantity_upstairs: 0, quantity_downstairs: 0)
+	Recipe.create(content: content, food_type: 'Red Meat', quantity_upstairs: 0, quantity_downstairs: 0, ann_safe: 't')
 end
 
 chicken.each do |content|
@@ -56,5 +65,5 @@ chicken.each do |content|
 end
 
 turkey.each do |content|
-	Recipe.create(content: content, food_type: 'Turkey', quantity_upstairs: 0, quantity_downstairs: 0)
+	Recipe.create(content: content, food_type: 'Turkey', quantity_upstairs: 0, quantity_downstairs: 0, ann_safe: 't')
 end

@@ -2,6 +2,7 @@ require 'pry'
 
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy, :remove_counts]
+  helper_method :pane_color
 
   # GET /recipes
   # GET /recipes.json
@@ -103,6 +104,16 @@ class RecipesController < ApplicationController
     if @recipe.quantity_downstairs > 0
       @recipe.decrement! :quantity_downstairs
       redirect_to recipes_path(anchor: @recipe.id)
+    end
+  end
+
+  def pane_color(recipe)
+    if recipe.quantity_upstairs == 0 && recipe.quantity_downstairs == 0
+      'panel-danger'
+    elsif recipe.ann_safe == false
+      'panel-ann-unsafe'
+    else
+      'panel-success'
     end
   end
 
