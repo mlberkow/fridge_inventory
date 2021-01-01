@@ -15,11 +15,32 @@
  *= require_self
  */
 
- .glyphicon-white-spaced {
- 	padding-left: 15px;
-	color: white;
+.glyphicon-white-spaced {
+  padding-left: 20px;
+  color: white;
 }
-
+.glyphicon-black-spaced {
+	padding-left: 20px;
+	color: black;
+  }
 .glyphicon-margin {
-	padding-left: 5px;
+  padding-left: 5px;
+}
+.panel-ann-unsafe {
+  border-color: rgb(243, 77, 0);
+}
+.panel-ann-unsafe > .panel-heading {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 182, 148);
+  border-color: rgb(243, 77, 0);
+}
+.panel-ann-unsafe > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: rgb(243, 77, 0);
+}
+.panel-ann-unsafe > .panel-heading .badge {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 182, 148);
+}
+.panel-ann-unsafe > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: rgb(243, 77, 0);
 }

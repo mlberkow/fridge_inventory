@@ -1,12 +1,12 @@
 <% Recipe.all.where(food_type: recipe).order(:content).each do |a| %>
 
-  <div class="panel <%=a.ann_safe == false ? :'panel-warning' : :'panel-success' %>">
+  <div class="panel <%=a.ann_safe == false ? :'panel-ann-unsafe' : :'panel-success' %>">
     <div class="panel-heading text-center" id="<%= a.id %>">
       <%= a.content %>
         <%= link_to "<i class ='glyphicon glyphicon-edit glyphicon-white-spaced'></i>" .html_safe, edit_recipe_path(a),
           :class=> "pull-right" %>
           <%= link_to "<i class ='glyphicon glyphicon-trash glyphicon-white-spaced'></i>" .html_safe, recipe_path(a),
-            method: :delete, :class=> "pull-right" %>
+            method: :delete, data: { confirm: "Are you sure you want to delete this meal?"}, :class=> "pull-right" %>
     </div>
     <table class="table table-responsive">
       <tr>
