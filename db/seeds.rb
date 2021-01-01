@@ -48,7 +48,11 @@ beef.each do |content|
 end
 
 chicken.each do |content|
-	Recipe.create(content: content, food_type: 'Chicken', quantity_upstairs: 0, quantity_downstairs: 0)
+	if content == 'BBQ' || content == 'Indian 2'
+		Recipe.create(content: content, food_type: 'Chicken', quantity_upstairs: 0, quantity_downstairs: 0, ann_safe: 'f')
+	else
+		Recipe.create(content: content, food_type: 'Chicken', quantity_upstairs: 0, quantity_downstairs: 0, ann_safe: 't')
+	end
 end
 
 turkey.each do |content|
