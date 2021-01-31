@@ -2,10 +2,10 @@
 
 <div class="panel <%=pane_color(a) %>">
   <!-- <div class="panel <%=a.ann_safe == false ? :'panel-ann-unsafe' : :'panel-success' %>"> -->
-    <div class="panel-heading text-center" id="<%= a.id %>">
+    <div class="panel-heading panel-relative text-center" id="<%= a.id %>">
       <%= a.content %>
         <%= link_to "<i class ='glyphicon glyphicon-edit glyphicon-black-spaced'></i>" .html_safe, edit_recipe_path(a),
-          :class=> "pull-right" %>
+          :class=> "icon-rightish" %>
           <%= link_to "<i class ='glyphicon glyphicon-trash glyphicon-black-spaced'></i>" .html_safe, recipe_path(a),
             method: :delete, data: { confirm: "Are you sure you want to delete this meal?"}, :class=> "pull-right" %>
     </div>

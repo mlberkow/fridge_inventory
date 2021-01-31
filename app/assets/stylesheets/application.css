@@ -44,3 +44,14 @@
 .panel-ann-unsafe > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: rgb(243, 77, 0);
 }
+.panel-relative{
+  position: relative;
+}
+.icon-right{
+  position: absolute;
+  right: 15px;
+}
+.icon-rightish{
+  position: absolute;
+  right: 40px;
+}
