@@ -4,9 +4,9 @@
   <!-- <div class="panel <%=a.ann_safe == false ? :'panel-ann-unsafe' : :'panel-success' %>"> -->
     <div class="panel-heading panel-relative text-center" id="<%= a.id %>">
       <%= a.content %>
-        <%= link_to "<i class ='glyphicon glyphicon-edit glyphicon-black-spaced'></i>" .html_safe, edit_recipe_path(a),
+        <%= link_to "<i class = 'glyphicon glyphicon-edit glyphicon-black-spaced' style='margin-right: 10px'></i>" .html_safe, edit_recipe_path(a),
           :class=> "icon-rightish" %>
-          <%= link_to "<i class ='glyphicon glyphicon-trash glyphicon-black-spaced'></i>" .html_safe, recipe_path(a),
+          <%= link_to "<i class = 'glyphicon glyphicon-trash glyphicon-black-spaced'></i>" .html_safe, recipe_path(a),
             method: :delete, data: { confirm: "Are you sure you want to delete this meal?"}, :class=> "pull-right" %>
     </div>
     <table class="table table-responsive">
